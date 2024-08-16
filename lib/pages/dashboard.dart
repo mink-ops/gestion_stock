@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'navbar.dart';
+import 'inventaire.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -7,18 +8,18 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  int _selectedIndex = 0; // Index de l'onglet actif
+  int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    const DashboardContent(), // Contenu spécifique du Dashboard
-    const Center(child: Text('Contenu de l\'Inventaire')),
+    const DashboardContent(),
+    const InventairePage(),
     const Center(child: Text('Contenu des Transactions')),
     const Center(child: Text('Contenu des États')),
   ];
 
   void _onTabSelected(int index) {
     setState(() {
-      _selectedIndex = index; // Mettre à jour l'index de l'onglet actif
+      _selectedIndex = index;
     });
   }
 
@@ -29,7 +30,7 @@ class _DashboardState extends State<Dashboard> {
         selectedIndex: _selectedIndex,
         onTabSelected: _onTabSelected,
       ),
-      body: _pages[_selectedIndex], // Afficher la page sélectionnée
+      body: _pages[_selectedIndex],
     );
   }
 }

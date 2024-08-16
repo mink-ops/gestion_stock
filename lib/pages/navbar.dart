@@ -7,96 +7,80 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   Navbar({required this.selectedIndex, required this.onTabSelected});
 
   @override
-  Size get preferredSize =>
-      const Size.fromHeight(120); // Hauteur totale ajustée
+  Size get preferredSize => const Size.fromHeight(120);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         AppBar(
-          automaticallyImplyLeading: false, // Supprime la flèche de retour
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.black,
-          toolbarHeight: 80, // Hauteur réduite pour la partie noire
+          toolbarHeight: 80,
           title: Row(
             children: [
-              const CircleAvatar(
-                backgroundColor: Colors.white, // Couleur de fond de l'icône
+              CircleAvatar(
+                backgroundColor: Colors.white,
                 radius: 14,
-                child: Icon(
-                  Icons.person,
-                  color: Colors.black, // Couleur de l'icône
-                  size: 12, // Taille de l'icône
-                ),
+                backgroundImage: AssetImage('images/stock.png'),
               ),
-              const SizedBox(width: 4), // Réduction de l'espace avant "RAKY"
+              const SizedBox(width: 4),
               const Text(
-                'RAKY',
+                'STOCK NEX',
                 style: TextStyle(
-                  color: Colors.white, // Couleur du texte blanche
-                  fontSize: 14, // Taille de la police réduite
+                  color: Colors.white,
+                  fontSize: 14,
                 ),
               ),
               const Spacer(),
               OutlinedButton(
                 style: OutlinedButton.styleFrom(
-                  side: const BorderSide(
-                      width: 1, color: Colors.white), // Bordure plus fine
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 8, vertical: 4), // Espacement interne réduit
+                  side: const BorderSide(width: 1, color: Colors.white),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.zero, // Pas d'arrondis
+                    borderRadius: BorderRadius.zero,
                   ),
                 ),
-                onPressed: () {
-                  // Action pour ajouter un produit
-                },
+                onPressed: () {},
                 child: const Text(
                   'AJOUT PRODUITS',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12), // Écriture plus petite
+                  style: TextStyle(color: Colors.white, fontSize: 12),
                 ),
               ),
-              const SizedBox(width: 4), // Espacement entre les boutons réduit
+              const SizedBox(width: 4),
               OutlinedButton(
                 style: OutlinedButton.styleFrom(
-                  side: const BorderSide(
-                      width: 1, color: Colors.white), // Bordure plus fine
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 8, vertical: 4), // Espacement interne réduit
+                  side: const BorderSide(width: 1, color: Colors.white),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.zero, // Pas d'arrondis
+                    borderRadius: BorderRadius.zero,
                   ),
                 ),
-                onPressed: () {
-                  // Action pour ajouter un fournisseur
-                },
+                onPressed: () {},
                 child: const Text(
                   'AJOUT FOURNISSEUR',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12), // Écriture plus petite
+                  style: TextStyle(color: Colors.white, fontSize: 12),
                 ),
               ),
             ],
           ),
         ),
         Container(
-          color: Colors.white, // Fond blanc pour les onglets
-          height: 40, // Hauteur des onglets ajustée
+          color: Colors.white,
+          height: 40,
           child: Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(
-                    left: 30), // Espacement avant le premier onglet
+                padding: const EdgeInsets.only(left: 30),
                 child: _buildTabItem(0, 'Dashboard'),
               ),
-              const SizedBox(width: 16), // Espacement entre les onglets
+              const SizedBox(width: 16),
               _buildTabItem(1, 'Inventaire'),
-              const SizedBox(width: 16), // Espacement entre les onglets
+              const SizedBox(width: 16),
               _buildTabItem(2, 'Transaction'),
-              const SizedBox(width: 16), // Espacement entre les onglets
+              const SizedBox(width: 16),
               _buildTabItem(3, 'États'),
             ],
           ),
@@ -114,19 +98,17 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
           Text(
             label,
             style: TextStyle(
-              fontSize: 14, // Taille de la police réduite
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               color: selectedIndex == index ? Colors.black : Colors.grey[600],
             ),
           ),
           if (selectedIndex == index)
             Container(
-              margin: const EdgeInsets.only(
-                  top:
-                      2), // Réduit l'espace au-dessus de la ligne de soulignement
-              height: 2, // Hauteur de la ligne de soulignement réduite
-              width: 40, // Largeur de la ligne de soulignement réduite
-              color: Colors.black, // Soulignement noir pour l'onglet actif
+              margin: const EdgeInsets.only(top: 2),
+              height: 2,
+              width: 40,
+              color: Colors.black,
             ),
         ],
       ),

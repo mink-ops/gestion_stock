@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart'; 
+import 'login_page.dart';
 
 class SignUpPage extends StatelessWidget {
   @override
@@ -7,7 +7,7 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -27,17 +27,17 @@ class SignUpPage extends StatelessWidget {
               height: 120,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               children: [
-                Text(
+                const Text(
                   'INSCRIPTION',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -47,7 +47,7 @@ class SignUpPage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'CONNEXION',
                     style: TextStyle(
                       fontSize: 16,
@@ -57,8 +57,8 @@ class SignUpPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
-            Column(
+            const SizedBox(height: 20),
+            const Column(
               children: [
                 TextField(
                   decoration: InputDecoration(
@@ -90,21 +90,21 @@ class SignUpPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue, 
+                  backgroundColor: Colors.blue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                 ),
                 onPressed: () {
                   // Action pour s'inscrire
                 },
-                child: Text(
+                child: const Text(
                   'INSCRIPTION',
                   style: TextStyle(color: Colors.white),
                 ),

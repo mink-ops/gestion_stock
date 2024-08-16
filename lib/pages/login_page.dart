@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'signup_pages.dart'; 
+import 'package:gestion_stock/pages/dashboard.dart';
+import 'signup_pages.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -7,7 +8,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -24,13 +25,13 @@ class LoginPage extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'CONNEXION',
                   style: TextStyle(
                     fontSize: 16,
                   ),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -40,7 +41,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     'INSCRIPTION',
                     style: TextStyle(
                       fontSize: 16,
@@ -50,22 +51,22 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 30),
-            TextField(
+            const SizedBox(height: 30),
+            const TextField(
               decoration: InputDecoration(
                 hintText: 'Entrer votre adresse email',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 16),
-            TextField(
+            const SizedBox(height: 16),
+            const TextField(
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Entrer votre mot de passe',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -75,19 +76,17 @@ class LoginPage extends StatelessWidget {
                       value: false,
                       onChanged: (value) {},
                     ),
-                    SizedBox(width: 8),
-                    Text('Se souvenir de moi'),
+                    const SizedBox(width: 8),
+                    const Text('Se souvenir de moi'),
                   ],
                 ),
                 TextButton(
-                  onPressed: () {
-                    
-                  },
-                  child: Text('Mot de passe oublié?'),
+                  onPressed: () {},
+                  child: const Text('Mot de passe oublié?'),
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -96,12 +95,17 @@ class LoginPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 20),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
                 ),
                 onPressed: () {
-                
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Dashboard(),
+                    ),
+                  );
                 },
-                child: Text(
+                child: const Text(
                   'CONNEXION',
                   style: TextStyle(color: Colors.white),
                 ),
